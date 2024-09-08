@@ -1,0 +1,133 @@
+/* General reset and smooth transitions */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Body styling with dark theme */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    padding: 20px;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    line-height: 1.6;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #ffffff; /* Bright white for the title */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff8a00, #da1b60); /* Gradient effect */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Flexbox layout */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Enable row wrapping */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Align cards in the center */
+}
+
+/* Card styling */
+li {
+    background-color: #1e1e1e; /* Darker background for cards */
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for modern look */
+    padding: 20px;
+    width: 300px; /* Fixed card width */
+    flex: 1 1 calc(33.333% - 40px); /* Three cards per row */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 138, 0, 0.5); /* Brighter shadow on hover */
+}
+
+/* Image styling */
+li img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /* Orange border around images */
+}
+
+/* Title styling */
+h2 {
+    margin: 0;
+    font-size: 24px;
+    color: whitesmoke; /* Orange title for contrast */
+    text-align: center;
+}
+
+/* Paragraph (description) styling */
+p {
+    margin: 10px 0 0;
+    color: #b0b0b0; /* Lighter gray text */
+    text-align: center;
+}
+
+/* Link styling */
+a {
+    color: wheat; /* Bright orange links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth fade-in animation for cards */
+li {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    li {
+        flex: 1 1 100%; /* Full width for small screens */
+    }
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff8a00;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
